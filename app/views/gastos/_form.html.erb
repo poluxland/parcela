@@ -1,0 +1,58 @@
+<%= form_with(model: gasto, local: true) do |form| %>
+  <% if gasto.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(gasto.errors.count, "error") %> prohibited this gasto from being saved:</h2>
+
+      <ul>
+      <% gasto.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :fecha %>
+    <%= form.date_select :fecha, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :descripcion %>
+    <%= form.text_field :descripcion, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :monto %>
+    <%= form.number_field :monto, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :comentarios %>
+    <%= form.text_field :comentarios, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :estado %>
+    <%= form.select :estado, ["Pagado", "Pendiente"] %>
+  </div>
+
+ 
+
+
+
+  <div class="form-group">
+    <% if gasto.persisted? %>
+      <div class="float-right">
+        <%= link_to 'Destroy', gasto, method: :delete, class: "text-danger", data: { confirm: 'Are you sure?' } %>
+      </div>
+    <% end %>
+
+    <%= form.submit class: 'btn btn-primary' %>
+
+    <% if gasto.persisted? %>
+      <%= link_to "Cancel", gasto, class: "btn btn-link" %>
+    <% else %>
+      <%= link_to "Cancel", gastos_path, class: "btn btn-link" %>
+    <% end %>
+  </div>
+<% end %>

@@ -1,2 +1,30 @@
-<h1>Welcome to Jumpstart!</h1>
-<p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
+<h1>Proyecto los laureles</h1>
+<p class="lead">Presupuesto: 74.000.000.<br>
+ Gastos efectuados: <%= number_to_currency(Gasto.sum(:monto), delimiter: ".", precision: 0) %>.</p>
+
+
+<br>
+<br>
+<div class="container">
+  <div class="card-deck">
+    <div class="card">
+      <a href="<%= gastos_path %>">
+        <%= image_tag ("canchas.jpg") , :class => "card-img-top img-fluid" %>
+      <div class="card-img-overlay"><h2 class="card-title text-white font-weight-bold">Gastos</h2></div>
+      </a>
+    </div>
+
+    <div class="card">
+      <a href="">
+        <%= image_tag ("mmpp.jpg") , :class => "card-img-top img-fluid" %>
+      <div class="card-img-overlay"><h2 class="card-title text-white font-weight-bold">Ingresos</h2></div>
+      </a>
+    </div>
+
+    <div class="card">
+      <a href="">
+        <%= image_tag ("reporte.jpg") , :class => "card-img-top img-fluid" %>
+      <div class="card-img-overlay"><h2 class="card-title text-white font-weight-bold">Otros</h2></div>
+      </a>
+    </div>
+</div>

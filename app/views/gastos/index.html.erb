@@ -1,0 +1,51 @@
+
+
+
+<div class="row">
+  <div class="col-sm-6">
+    <h1>Gastos</h1>
+  </div>
+
+  <div class="col-sm-6 text-right">
+  <%= link_to new_gasto_path, class: 'btn btn-primary' do %>
+    Agregar Gasto
+  <% end %>
+  </div>
+</div>
+
+<div class="table-responsive">
+  <table class="table table-striped table-bordered table-hover">
+    <thead>
+      <tr>
+    
+
+            <th>Fecha</th>
+            <th>Descripcion</th>
+            <th>Monto</th>
+            <th>Comentarios</th>
+            <th>Estado</th>
+            
+          <th></th>
+        
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @gastos.each do |gasto| %>
+        <%= content_tag :tr, id: dom_id(gasto), class: dom_class(gasto) do %>
+          
+
+                      <td><%= gasto.fecha %></td>
+                      <td><%= gasto.descripcion %></td>
+                      <td><%= number_to_currency(gasto.monto, delimiter: ".", precision: 0) %></td>
+                      <td><%= gasto.comentarios %></td>
+                      <td><%= gasto.estado %></td>
+          
+          
+            <td><%= link_to 'Ver', gasto %></td>
+          
+        <% end %>
+      <% end %>
+    </tbody>
+  </table>
+</div>

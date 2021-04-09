@@ -1,0 +1,27 @@
+<div class="page-header">
+  <%= link_to gastos_path, class: 'btn btn-default' do %>
+    All Gastos
+  <% end %>
+  <%= link_to edit_gasto_path(@gasto), class: 'btn btn-primary' do %>
+    Edit
+  <% end %>
+  <h1>Show gasto</h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt>Fecha:</dt>
+  <dd><%= @gasto.fecha %></dd>
+
+  <dt>Descripcion:</dt>
+  <dd><%= @gasto.descripcion %></dd>
+
+  <dt>Monto:</dt>
+  <dd><%= @gasto.monto %></dd>
+
+  <dt>Comentarios:</dt>
+  <dd><%= @gasto.comentarios %></dd>
+
+  <dt>Estado:</dt>
+  <dd><%= @gasto.estado %></dd>
+
+</dl>
