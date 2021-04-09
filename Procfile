@@ -1,2 +1,2 @@
-web: rails server
-worker: sidekiq
+web:rails server
+worker:sidekiq
