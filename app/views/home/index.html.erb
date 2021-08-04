@@ -1,5 +1,5 @@
 <h1>Proyecto los laureles</h1>
-<p class="lead">Presupuesto: 74.000.000.<br>
+<p class="lead">Presupuesto: 70.000.000.<br>
  Gastos efectuados: <%= number_to_currency(Gasto.sum(:monto), delimiter: ".", precision: 0) %>.</p>
 
 
@@ -15,9 +15,9 @@
     </div>
 
     <div class="card">
-      <a href="">
+      <a href="<%= budgets_path %>">
         <%= image_tag ("mmpp.jpg") , :class => "card-img-top img-fluid" %>
-      <div class="card-img-overlay"><h2 class="card-title text-white font-weight-bold">Ingresos</h2></div>
+      <div class="card-img-overlay"><h2 class="card-title text-white font-weight-bold">Cotizaciones</h2></div>
       </a>
     </div>
 
